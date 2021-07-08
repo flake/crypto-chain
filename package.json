@@ -1,0 +1,22 @@
+{
+  "name": "crypto-chain",
+  "version": "1.0.0",
+  "description": "Crypto Chain",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flake/crypto-chain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flake/crypto-chain/issues"
+  },
+  "homepage": "https://github.com/flake/crypto-chain#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
