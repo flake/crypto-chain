@@ -5,10 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "node index.js",
-    "dev": "npm run redis && nodemon index.js",
+    "start": "npm run build-client & node index.js",
+    "dev": "npm run dev-client & npm run redis && nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
-    "redis": "redis-server --daemonize yes"
+    "redis": "redis-server --daemonize yes",
+    "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
+    "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/dist",
+    "clean": "rm -rf .cache client/dist"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
   },
   "homepage": "https://github.com/flake/crypto-chain#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
     "cross-env": "^7.0.3",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12"
@@ -30,6 +34,9 @@
     "elliptic": "^6.5.4",
     "express": "^4.17.1",
     "hex-to-binary": "^1.0.1",
+    "parcel-bundler": "^1.12.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "redis": "^3.1.2",
     "request": "^2.88.2",
     "uuid": "^8.3.2"
