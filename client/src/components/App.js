@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Blocks from './Blocks'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 class App extends Component {
@@ -20,12 +20,15 @@ class App extends Component {
                 <br />
                 <div>Welcome to the blockchain...</div>
                 <br />
+                <div><Link to='/blocks'>Blocks</Link></div>
+                <div><Link to='/conduct-transaction'>Conduct a Transaction</Link></div>
+                <div><Link to='/transaction-pool'>Transaction Pool</Link></div>
+                <br />
                 <div className="WalletInfo">
                     <h3>Wallet</h3>
                     <div>Address: {address}</div>
                     <div>Balance: {balance}</div>
                 </div>
-                <Blocks />
             </div>
         )
     }
